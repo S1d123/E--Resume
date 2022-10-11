@@ -1,0 +1,79 @@
+button::after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+button {
+  background: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 10px auto;
+  position: relative;
+  text-transform: uppercase;
+}
+button::before,
+button::after {
+  background: black;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+button:hover {
+  color:white;
+  background-color: black;
+}
+.button1::after {
+  height: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.button1:hover:after {
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, .75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+      width: 0;
+  }
+
+  to {
+      width: 24em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+      border-right-color: rgba(255, 255, 255, .75);
+  }
+
+  to {
+      border-right-color: transparent;
+  }
+}
